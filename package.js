@@ -1,6 +1,6 @@
 Package.describe({
 	name: 'orionjs:image-attribute',
-	summary: 'Image attribute form orionjs',
+	summary: 'Image attribute for orionjs',
 	version: '0.0.1',
 	git: 'https://github.com/orionjs/image-attribute'
 });

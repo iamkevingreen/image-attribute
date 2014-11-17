@@ -10,7 +10,7 @@
     ],
     [
       "aldeed:autoform",
-      "4.0.0-rc10"
+      "4.0.2"
     ],
     [
       "aldeed:collection2",
@@ -91,6 +91,10 @@
     [
       "geojson-utils",
       "1.0.1"
+    ],
+    [
+      "hckrs:summernote",
+      "0.0.1"
     ],
     [
       "html-tools",
@@ -179,6 +183,14 @@
     [
       "mrt:moment",
       "2.6.0"
+    ],
+    [
+      "natestrauser:font-awesome",
+      "4.2.0"
+    ],
+    [
+      "nicolaslopezj:summernote",
+      "0.1.0"
     ],
     [
       "npm-bcrypt",

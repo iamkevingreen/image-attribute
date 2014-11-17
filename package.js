@@ -1,27 +1,23 @@
 Package.describe({
-	name: 'orionjs:summernote',
-	summary: 'Summernote editor for orionjs',
+	name: 'orionjs:image-attribute',
+	summary: 'Image attribute for orionjs',
 	version: '0.0.1',
-	git: 'https://github.com/orionjs/summernote'
+	git: 'https://github.com/orionjs/image-attribute'
 });
 
 Package.onUse(function(api) {
 	api.versionsFrom('1.0');
 
 	api.use([
-		'orionjs:core@0.0.1',
+		'orionjs:core',
 		'meteor-platform',
 		'less',
-		'aldeed:autoform@4.0.2', 
+		'aldeed:autoform@4.0.0-rc10', 
 		'lepozepo:s3@4.1.1', 
-		'nicolaslopezj:summernote@0.1.0',
-		'natestrauser:font-awesome@4.2.0',
-		'jquery@1.0.0'
 		]);
 
 	api.imply([
 		'lepozepo:s3',
-		'hckrs:summernote',
 		]);
 
 	api.addFiles([
@@ -29,9 +25,9 @@ Package.onUse(function(api) {
 		]);
 
 	api.addFiles([
-		'form/summernote.html',
-		'form/summernote.js',
-		'form/summernote.less',
+		'form/image.html',
+		'form/image.js',
+		'form/image.less',
 		'lib/autoform.js',
 		], 'client');
 });

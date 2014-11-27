@@ -1,7 +1,7 @@
 Package.describe({
 	name: 'orionjs:image-attribute',
 	summary: 'Image attribute for orionjs',
-	version: '0.0.2',
+	version: '0.1.0',
 	git: 'https://github.com/orionjs/image-attribute'
 });
 
@@ -13,11 +13,7 @@ Package.onUse(function(api) {
 		'meteor-platform',
 		'less',
 		'aldeed:autoform@4.0.2', 
-		'lepozepo:s3@4.1.1', 
-		]);
-
-	api.imply([
-		'lepozepo:s3',
+		'orionjs:filesystem', 
 		]);
 
 	api.addFiles([

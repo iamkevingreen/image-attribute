@@ -1,17 +1,41 @@
 Template.orionImageInput.events({
-    "change input.filebag": function(){
+    "change input.filebag": function(event, template){
     	var name = this.name;
     	var imageView = $('[data-schema-key="' + name + '"]')
-    	var fileInput = $('input[attr-name="' + name + '"]');
-    	var file = fileInput[0].files;
+        var fileInput = $('input[attr-name="' + name + '"]');
+        var parent = fileInput.closest(".panel-body");
+        var fileIdInput = parent.find('input[name="' + name.replace("link", "fileId") + '"]');
 
     	imageView.parent().addClass('is-loading');
-    	S3.upload(file, "/imgs", function(e, r) {
-    		imageView.attr('src', r.url);
-			imageView.parent().removeClass('is-loading');
-		});
+        if (fileInput[0].files.length > 0) {
+            var uploadingFile = fileInput[0].files[0];
+            orion.filesystem.upload({
+                fileList: fileInput[0].files, 
+                name: uploadingFile.name, 
+                folder: 'images', 
+                canRemove: false
+            }, function(file, error) {
+                if (!error) {
+                    fileIdInput.val(file._id);
+                    imageView.attr('src', file.url);
+                } else {
+                    console.log(error, "error uploading file")
+                }
+                imageView.parent().removeClass('is-loading');
+            });
+        }
     },
     "click img.image-input": function() {
-    	$('[data-schema-key="' + this.name + '"]').attr('src', '');
+        var imageView = $('[data-schema-key="' + this.name + '"]');
+        var parent = imageView.closest(".panel-body");
+        var fileId = parent.find('input[name="' + this.name.replace("link", "fileId") + '"]').val();
+        try {
+            orion.filesystem.remove(fileId);
+        } catch (e) {
+            
+        }
+    	imageView.attr('src', '');
+        parent.find('input[name="' + name.replace("link", "fileId") + '"]').val("");
+        parent.closest("form").submit();
     }
 })

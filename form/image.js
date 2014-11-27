@@ -13,7 +13,7 @@ Template.orionImageInput.events({
                 fileList: fileInput[0].files, 
                 name: uploadingFile.name, 
                 folder: 'images', 
-                canRemove: false
+                canRemove: true
             }, function(file, error) {
                 if (!error) {
                     fileIdInput.val(file._id);

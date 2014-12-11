@@ -10,9 +10,9 @@ Template.orionImageInput.events({
         if (fileInput[0].files.length > 0) {
             var uploadingFile = fileInput[0].files[0];
             orion.filesystem.upload({
-                fileList: fileInput[0].files, 
-                name: uploadingFile.name, 
-                folder: 'images', 
+                fileList: fileInput[0].files,
+                name: uploadingFile.name,
+                folder: 'images',
                 canRemove: true
             }, function(file, error) {
                 if (!error) {
@@ -32,10 +32,18 @@ Template.orionImageInput.events({
         try {
             orion.filesystem.remove(fileId);
         } catch (e) {
-            
+
         }
     	imageView.attr('src', '');
         parent.find('input[name="' + name.replace("link", "fileId") + '"]').val("");
         parent.closest("form").submit();
+    },
+    "mouseenter .image-input": function() {
+        var imageView = $('[data-schema-key="' + this.name + '"]');
+        imageView.parent().addClass('remove');
+    },
+    "mouseleave .image-input": function() {
+        var imageView = $('[data-schema-key="' + this.name + '"]');
+        imageView.parent().removeClass('remove');
     }
 })

@@ -10,11 +10,11 @@
     ],
     [
       "aldeed:autoform",
-      "4.0.2"
+      "4.1.0"
     ],
     [
       "aldeed:collection2",
-      "2.0.0"
+      "2.2.0"
     ],
     [
       "aldeed:delete-button",
@@ -34,7 +34,7 @@
     ],
     [
       "aslagle:reactive-table",
-      "0.5.5"
+      "0.5.9"
     ],
     [
       "autoupdate",
@@ -78,7 +78,7 @@
     ],
     [
       "ddp",
-      "1.0.11"
+      "1.0.12"
     ],
     [
       "deps",
@@ -190,7 +190,7 @@
     ],
     [
       "meteorhacks:subs-manager",
-      "1.1.0"
+      "1.2.2"
     ],
     [
       "minifiers",
@@ -206,7 +206,7 @@
     ],
     [
       "mongo",
-      "1.0.8"
+      "1.0.9"
     ],
     [
       "mongo-livedata",
@@ -338,6 +338,6 @@
     ]
   ],
   "pluginDependencies": [],
-  "toolVersion": "meteor-tool@1.0.35",
+  "toolVersion": "meteor-tool@1.0.36",
   "format": "1.0"
 }

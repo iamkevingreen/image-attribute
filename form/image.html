@@ -4,9 +4,15 @@
 			<div class="image-attribute-container">
 				<img class="image-input" src="{{ this.value }}" {{ this.atts }}>
 				<p><i>Loading...</i></p>
+				<span class="floating-close">
+					<svg stroke="#000000" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+						<line stroke-width="4" x1="2" x2="30" y1="2" y2="30"/>
+						<line stroke-width="4" x1="2" x2="30" y1="30" y2="2"/>
+					</svg>
+				</span>
 			</div>
 		</div>
-		
+
 		<span class="btn btn-primary btn-file">
 			Select Image <input type="file" class="filebag" attr-name="{{ this.name }}">
 		</span>

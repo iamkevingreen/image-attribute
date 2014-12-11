@@ -6,27 +6,50 @@ img.data-table-image {
 
 .orionImageInput {
 
-    .image-attribute-container img {
-        height: 100px; 
-        margin-bottom: 10px;
-        border-radius: 5px;
-        cursor: pointer;
+    .image-attribute-container{
+        position: relative;
+        display: inline-block;
+        img {
+            height: 100px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        p {
+            display: none;
+        }
+        &.is-loading {
+            img {
+                display: none;
+            }
+            p {
+                display: block;
+            }
+        }
     }
+    .floating-close svg {
+      height: 30px;
+      width: 30px;
+      position: absolute;
+      right: -10px;
+      top: -10px;
+      background: #fff;
+      border-radius: 50%;
+      opacity: 0;
+      padding: 8px;
+      cursor: pointer;
+      box-shadow: 1px 1px 1px rgba(0,0,0,.4);
+      &:hover {
+        opacity: .9;
+      }
+    }
+    .remove .floating-close svg {
+      opacity: .9;
+    }
+
 
     .image-input[src=""] {
         display: none;
-    }
-
-    .image-attribute-container p {
-        display: none;
-    }
-
-    .image-attribute-container.is-loading img {
-        display: none;
-    }
-
-    .image-attribute-container.is-loading p {
-        display: block;
     }
 
     .btn-file {
@@ -50,4 +73,3 @@ img.data-table-image {
     }
 
 }
-

@@ -25,7 +25,7 @@ Template.orionImageInput.events({
             });
         }
     },
-    "click img.image-input": function() {
+    "click .image-attribute-container": function() {
         var imageView = $('[data-schema-key="' + this.name + '"]');
         var parent = imageView.closest(".panel-body");
         var fileId = parent.find('input[name="' + this.name.replace("link", "fileId") + '"]').val();
@@ -34,7 +34,7 @@ Template.orionImageInput.events({
         } catch (e) {
 
         }
-    	imageView.attr('src', '');
+      imageView.attr('src', '');
         parent.find('input[name="' + name.replace("link", "fileId") + '"]').val("");
         parent.closest("form").submit();
     },
